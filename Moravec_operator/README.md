@@ -11,7 +11,9 @@ The script returns a `.csv` file containing coordinates of detected edge points 
 
 ### Customization
 
-Variables in `UPPERCASE` can be edited. It is not recommended to set them to high values as it greatly decreases the script's performance. 
+Variables in `UPPERCASE` can be edited. It is not recommended to set them to high values as it greatly decreases the script's performance.  
+Output file names can also be edited, though the output file types will always be `.csv` and `.tif`.
+
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/90621465/209814062-4c0391a3-9f36-4c33-bd09-2d77671b559b.png" width="600">

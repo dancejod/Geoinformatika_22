@@ -12,7 +12,7 @@ The script returns a `.csv` file containing coordinates of detected edge points 
 ### Customization
 
 Variables in `UPPERCASE` can be edited. It is not recommended to set them to high values as it greatly decreases the script's performance.  
-Output file names can also be edited, though the output file types will always be `.csv` and `.tif`.
+Output file names can also be edited by rewriting the default strings in functions `write_edges_to_file` and `save_edge_map`.
 
 
 <p align="center">

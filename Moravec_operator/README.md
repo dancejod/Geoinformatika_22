@@ -10,5 +10,5 @@ This operator detects the corners of objects in an image by observing changes in
 
 
 ## References
- Markup : *H. Moravec, “Obstacle Avoidance and Navigation in the Real World by a Seeing Robot Rover”, technical report, Carnegie–Mellon University, Robotics Institute, 1980.
-          *V. Mazet, “Corner detection – Basics of Image Processing”, 2022, https://vincmazet.github.io/bip/detection/corners.html (26. 12. 2022).
+*H. Moravec, “Obstacle Avoidance and Navigation in the Real World by a Seeing Robot Rover”, technical report, Carnegie–Mellon University, Robotics Institute, 1980.
+*V. Mazet, “Corner detection – Basics of Image Processing”, 2022, https://vincmazet.github.io/bip/detection/corners.html (26. 12. 2022).

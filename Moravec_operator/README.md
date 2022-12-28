@@ -14,7 +14,7 @@ The script returns a `.csv` file containing coordinates of detected edge points 
 ### Customization
 
 Variables in `UPPERCASE` can be edited. It is not recommended to set them to high values as it greatly decreases the script's performance.  
-Output file names can also be edited by rewriting the default strings in functions `write_edges_to_file` and `save_edge_map`.
+Output file names can also be edited by rewriting the default strings in functions `write_edges_to_file` and `save_edge_map` (lines 189 and 190).
 
 
 <p align="center">

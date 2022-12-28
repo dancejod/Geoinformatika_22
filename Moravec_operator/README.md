@@ -6,7 +6,8 @@ This operator detects the corners of objects in an image by observing changes in
 
 ## Usage
 
-Put `moravec.py` in the same directory as your image. Execute the script.
+Put `moravec.py` in the same directory as your image. Execute the script.  
+If needed, rewrite the default string `lena.tif` on line 186 to the title of your image (with an extension).
 The script returns a `.csv` file containing coordinates of detected edge points and a `.tif` file of the image's edge map.
 
 ### Customization

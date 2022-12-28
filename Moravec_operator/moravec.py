@@ -9,7 +9,7 @@ import sys
 # (Optional) Set window_size to an odd number greater than 3 to get more pronounced edges.
 # WARNING: Setting window_size to a high value will lead to decreased performance.
 THRESHOLD = 3500    
-window_size = 3
+WINDOW_SIZE = 3
 
 def generate_vectors(size):
     '''
@@ -105,12 +105,13 @@ def write_edges_to_file(edges_list, outfilename):
         csv.writer(out, delimiter = ',').writerow(["row,column"])
         csv.writer(out, delimiter = ',').writerows(edges_list)
         
-def save_edge_map(image_matrix, outimgname):
+def save_edge_map(image_matrix, window_size, outimgname):
     '''
     Saves the detected edges to a tif image.
 
         Parameters:
             image_matrix (array): Image matrix.
+            window_size (int): Size of the convolution window (size x size).
     '''
     
     # Crop the matrix in order to get rid of pixels not used in edge computation (source image bounds)
@@ -119,7 +120,7 @@ def save_edge_map(image_matrix, outimgname):
     edge_map = Image.fromarray((image_matrix * 255).astype(np.uint8))
     edge_map.save(f"{outimgname}.tif")
 
-def moravec(image_matrix, threshold):
+def moravec(image_matrix, threshold, window_size):
     '''
     An edge detection algorithm.
     The algorithm moves the convolution window around one pixel in all directions
@@ -129,6 +130,7 @@ def moravec(image_matrix, threshold):
         Parameters:
             image_matrix (array): Image matrix.
             threshold (int): Threshold value from which the pixel is considered an edge point.
+            window_size (int): Size of the convolution window (size x size).
 
         Returns:
             edges_list (list): List of detected edges.
@@ -179,10 +181,10 @@ def moravec(image_matrix, threshold):
     return edges_list
         
 # Execute the script with default file names
-vector_list = generate_vectors(window_size)
+vector_list = generate_vectors(WINDOW_SIZE)
 window = create_convolution_window(vector_list)
 IM = convert_image_to_matrix("lena.tif")
-edges = moravec(IM, THRESHOLD)
+edges = moravec(IM, THRESHOLD, WINDOW_SIZE)
 edges.sort()
 write_edges_to_file(edges, "edges")
-save_edge_map(IM, "lena_edges")
+save_edge_map(IM, WINDOW_SIZE, "lena_edges")
